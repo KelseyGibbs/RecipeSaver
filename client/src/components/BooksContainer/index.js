@@ -5,6 +5,7 @@ import Col from "./Col";
 import Card from "./Card";
 import SearchForm from "./SearchForm";
 import BookDetail from "./BookDetail";
+// import SaveBtn from "./SaveBtn";
 import API from "../../utils/API";
 
 class BooksContainer extends Component {
@@ -33,6 +34,12 @@ class BooksContainer extends Component {
     this.setState({
       [name]: value
     });
+  };
+
+  saveBook = id => {
+    API.saveBook(id)
+      .then(console.log("Book Saved"))
+      .catch(err => console.log(err));
   };
 
   // When the form is submitted, search the OMDB API for the value of `this.state.search`

@@ -1,6 +1,5 @@
 import axios from "axios";
-// const key = process.env.GOOGLE_BOOKS_KEY;
-// userInput;
+
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q="
 const APIKEY = process.env.API_KEY;
 
@@ -9,6 +8,7 @@ export default {
     search: function(query) {
         return axios.get(BASEURL + query + APIKEY);
       },
+      
     // Gets google api data
     google: function (userInput) {
         return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + userInput + "&projection=lite&maxResults=5");
